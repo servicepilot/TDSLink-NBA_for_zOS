@@ -15,6 +15,8 @@ NBA for z/OS Free Edition captures all the IP traffic flowing through the IP dat
 - User-friendly interface to display a meaningful presentation of the trace
 - 1 minute, 15 minutes or unlimited trace
 
+![TDSLink - NBA for z/OS web interface screenshot](screenshot.png)
+
 ## Commercial version
 
 NBA for z/OS Full Edition can be used either by network or security engineers.
@@ -28,7 +30,7 @@ NBA for z/OS Full Edition can be used either by network or security engineers.
 
 More information: [ServicePilot web site](https://www.servicepilot.com/en/application-flow/mainframe/)
 
-Free month trial is available on demand. Do not hesitate to request one at: [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot+NBA+for+z/OS+Full+Edition)
+Free month trial is available on demand. Do not hesitate to request one at: [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot_NBA_for_z/OS_Full_Edition)
 
 ## Installation & Security consideration
 
@@ -37,7 +39,7 @@ Free month trial is available on demand. Do not hesitate to request one at: [sup
 
 ## Support
 
-Whether you are using the free version or the commercial version, all questions or requests are welcome. You can contact us at: [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot+NBA+for+z/OS+Full+Edition)
+Whether you are using the free version or the commercial version, all questions or requests are welcome. You can contact us at: [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot_NBA_for_z/OS_Full_Edition)
 
 ## License
 
