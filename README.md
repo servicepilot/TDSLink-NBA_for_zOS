@@ -28,16 +28,16 @@ NBA for z/OS Full Edition can be used either by network or security engineers.
 
 More information: [ServicePilot web site](https://www.servicepilot.com/en/application-flow/mainframe/)
 
-Free month trial is available on demand. Do not hesitate to request one at: [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot NBA for z/OS Full Edition Free trial)
+Free month trial is available on demand. Do not hesitate to request one at: [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot+NBA+for+z/OS+Full+Edition)
 
 ## Installation & Security consideration
 
- [Install](Install.md)
- [Security](https.md)
+ - [Install](Install.md)
+ - [Security](https.md)
 
 ## Support
 
-Whether you are using the free version or the commercial version, all questions or requests are welcome. You can contact us at: [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot NBA for z/OS Full Edition)
+Whether you are using the free version or the commercial version, all questions or requests are welcome. You can contact us at: [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot+NBA+for+z/OS+Full+Edition)
 
 ## License
 
@@ -46,4 +46,3 @@ Whether you are using the free version or the commercial version, all questions 
 ## Copyright
 
 © Copyright ServicePilot Inc 2020
-
