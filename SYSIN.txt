@@ -1,0 +1,98 @@
+*   +------------------------------------+
+*   |     N B A 4 Z O S    V . 8 . 1     |
+*   |                                    |
+*   |        P A R A M E T E R S         |
+*   |                                    |
+*   |  Ref: NBA for zOS v.8.1            |
+*   |       User Guide                   |
+*   |                                    |
+*   +------------------------------------+
+
+* 1. SYSTEM PARAMETERS
+
+    KEY  XXXXXXXXXXXXX         KEY FOR COMMERCIAL VERSION
+    TRACE N
+    COUNTRY US                 COUNTRY US/UK
+    COMPANY 'Your company'
+
+* 2. NETWORK PARAMETERS
+
+    IP Y                       TCPIP INTERFACE
+    IPSTC TCPIP                TCPIP STC NAME
+    TCPPORT 2999               TELNET-CLI PORT NUMBER
+    WEB Y                      WEB INTERFACE
+    WEBPORT 8080               WEB PORT
+    SNMP N                     SNMP AGENT
+    SNMPPORT 1160              SNMP AGENT
+    UDPLOG N                   UDP LOG SERVER (SYSLOGD) IN NBA4ZOS
+*   UDPPORT 514                UDP LOG PORT
+    
+    COMMUNIT  public           DEFAULT SNMP COMMUNITY
+
+* 3. NBA for z/OS LIST FOR WEB MENU
+
+    WTDSLIST 'This NBA4zOS',10.10.10.1,8080  
+    WTDSLIST 'Another NBA4zOS',111.222.33.44,8080
+
+* 4. SECURITY PARAMETERS
+
+*   RACF N                      RACF INTERFACE
+*   OPVERFY N                   CONTROL OPERATOR NAME
+*       OPER USER1              NAME,OPTION
+*       OPER USER2              NAME,OPTION
+    SNMPOPER public,,,Y,1,N     USER,IP,PORT,SNMP_SET,CMD,TRAP
+
+* 5. PERFORMANCE PARAMETERS
+
+*   NETMON   Y                  IP NETWORKS MONITORING
+*   FTPMON   Y                  FTP SESSIONS HISTORY COLLECT
+*   EEXTMON  Y                  ENT. EXT. HISTORY COLLECT
+*   MQSMON   Y                  MQSERIES HISTORY COLLECT
+*   RTPMON   Y                  HPR NODES DISCOVERY
+
+* 6. MONITORED APPLICATIONS DEFINITION
+
+    APPLMON  L,TCP,*                            ALL LOCAL TCP
+    APPLMON  R,TCP,21,'FTP CONTROL',N,Y,,TCPIP  REMOTE FTP CONTROL
+    APPLMON  L,TCP,23,'Telnet',Y                LOCAL TELNET WITH RT
+    APPLMON  R,TCP,25,'SMTP',N,Y                REMOTE SMTP SERVER
+    APPLMON  L,TCP,8080,'Web NBA for zOS'       NBA for z/OS WEB SERVER
+*   APPLMON  *,TCP,1998                         LOCAL/REMOTE XOT
+    APPLMON  L,UDP,1160,'SNMP NBA4zOS'          LOCAL SNMP NBA for z/OS
+*   APPLMON  L,UDP,12000-12004,'Ent. Extender'  LOCAL EEXT
+
+* 7. BEHAVIOR ALARMS
+
+    RULETYPE DEFAULT
+      OUTPUT WEB
+    ENDRULET
+
+*  BAD RESPONSE TIMES FOR INDIVIDUAL TCP CONNECTIONS (>2 SEC)
+    DEFAULT CONN.ALL.*.*.CONN_HOST_LAST>2000
+    DEFAULT CONN.ALL.*.*.CONN_TNET_LAST>2000
+
+*  FTP TRANSFERS ( > 10 MB)
+    DEFAULT FTP.*.FTP_BYT_DATA>10M
+
+*  BAD RESPONSE TIMES FOR IP RESOURCES
+    DEFAULT LAPP.*.*.LOC_MAX_HRT>2000
+    DEFAULT LAPP.*.*.LOC_MAX_NRT>2000
+    DEFAULT RAPP.*.*.*.REM_MAX_HRT>2000
+    DEFAULT RAPP.*.*.*.REM_MAX_NRT>2000
+    DEFAULT NETW.*.NET_MAX_HRT>2000
+    DEFAULT NETW.*.NET_MAX_NRT>2000
+
+* TCP WINDOWS CONGESTION
+    DEFAULT LAPP.*.*.LOC_TCP_WINDOW>150
+    DEFAULT RAPP.*.*.*.REM_TCP_WINDOW>150
+    DEFAULT NETW.*.NET_TCP_WINDOW>150
+
+* TCP DUPLICATE ACKS
+   DEFAULT LAPP.*.*.LOC_TCP_DUP_ACK>150
+   DEFAULT RAPP.*.*.*.REM_TCP_DUP_ACK>150
+   DEFAULT NETW.*.NET_TCP_DUP_ACK>150
+
+* TCP RETRANSMITTED PACKETS
+   DEFAULT LAPP.*.*.LOC_TCP_RETRMT>150
+   DEFAULT RAPP.*.*.*.REM_TCP_RETRMT>150
+   DEFAULT NETW.*.NET_TCP_RETRMT>150
