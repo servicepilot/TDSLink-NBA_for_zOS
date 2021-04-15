@@ -2,7 +2,7 @@
 
 ## How to contribute
 
-You are welcome to contribute to NBA for z/OS with integration samples. Feel free to contact us at [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot NBA for z/OS Full Edition Integration samples) for discussing proposals or to raise a question.
+You are welcome to contribute to NBA for z/OS with integration samples. Feel free to contact us at [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot%20NBA%20for%20z/OS%20Full%20Edition%20Integration%20samples) for discussing proposals or to raise a question.
 
 
 ## Integrations
