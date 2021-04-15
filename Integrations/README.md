@@ -1,0 +1,153 @@
+# TDSLink - NBA for z/OS Integrations and APIs
+
+## How to contribute
+
+You are welcome to contribute to NBA for z/OS with integration samples. Feel free to contact us at [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot NBA for z/OS Full Edition Integration samples) for discussing proposals or to raise a question.
+
+
+## Integrations
+
+NBA for z/OS integration is possible with the following tools:
+
+- [ServicePilot](servicepilot/README.md): Sends events & metrics to ServicePilot
+- [InfluxDB](influxdb/README.md): Sends metrics to InfluxDB and compatible software packages like Grafana
+
+## Get z/OS Logs
+
+URL: `{nbaforzos_url}/api/logs`
+
+Method: `GET`
+
+This API allows you to receive live zOS system logs on a permanent HTTP connection.
+
+Sample response:
+
+```
+N        ADCD    202110411.03.29.67TSU00075P NBA4ZOSF
+N        ADCD    202110411.03.29.68STC00076TLO010I PTDS      MAX/TRANS=0000002  MAX/TERM=0000002  EVE/SEC=0000003
+N        ADCD    202110411.03.29.71STC00076TLO012I PTERMM   END OF TDSLINK
+N        ADCD    202110411.03.29.79STC00076-                                              --TIMINGS (MINS.)--            -----PAGING COUNTS----
+N        ADCD    202110411.03.29.79STC00076-STEPNAME PROCSTEP    RC   EXCP   CONN    TCB    SRB  CLOCK   SERV  WORKLOAD  PAGE  SWAP   VIO SWAPS
+N        ADCD    202110411.03.29.80STC00076-         TDSLINK     00    445      0    .06    .02   36.4   279K  STARTED      0     0     0     0
+N        ADCD    202110411.03.29.80STC00076IEF404I NBA4ZOSF - ENDED - TIME=11.03.29
+```
+
+## Get Network Statistics
+
+### Local applications
+
+URL: `{nbaforzos_url}/api/stats/lapp`
+
+Method: `GET`
+
+This API allows you to get statistics and informations about local applications in InfluxDB format.
+
+* Application informations: `host`, `protocol`, `port`, ...
+* Application volume statistics: `packets`, `bytes`, `bps`, `pps`, ...
+* Application TCP activity: `tcpstart`, `tcprejected`, `tcpwindow`, `tcpdupack`, ...
+* Application TCP response times: `tcphostrt`, `tcpnetwrt`
+
+Sample response:
+
+```
+localapp,host="adcd",proto="tcp",serverport=22,program="sshd4" packetsin=0,packetsout=0,bytesin=0,bytesout=0,maxppsin=0,maxppsout=0,maxbpsin=0,maxbpsout=0,tcpstart=0,tcpend=0,tcprejected=0,tcphostrt=0,tcpnetwrt=0,tcpdupack=0,tcpretransmit=0,tcpwindow=0,tcpstartinprivate=0,tcpstartinpublic=0,tcpstartoutprivate=0,tcpstartoutpublic=0,tcpendin=0,tcpendout=0,tcpreset=0,conversations=0 1618398282000000000
+localapp,host="adcd",proto="tcp",serverport=23,program="telnet" packetsin=629,packetsout=676,bytesin=31014,bytesout=472169,maxppsin=9,maxppsout=9,maxbpsin=3606,maxbpsout=67554,tcpstart=5,tcpend=2,tcprejected=0,tcphostrt=106,tcpnetwrt=8,tcpdupack=1,tcpretransmit=3,tcpwindow=0,tcpstartinprivate=5,tcpstartinpublic=0,tcpstartoutprivate=0,tcpstartoutpublic=0,tcpendin=0,tcpendout=2,tcpreset=0,conversations=2,bytesintopip="10.1.1.170",bytesouttopip="10.1.1.170" 1618398282000000000
+localapp,host="adcd",proto="tcp",serverport=80,program="httpd1" packetsin=0,packetsout=0,bytesin=0,bytesout=0,maxppsin=0,maxppsout=0,maxbpsin=0,maxbpsout=0,tcpstart=0,tcpend=0,tcprejected=0,tcphostrt=0,tcpnetwrt=0,tcpdupack=0,tcpretransmit=0,tcpwindow=0,tcpstartinprivate=0,tcpstartinpublic=0,tcpstartoutprivate=0,tcpstartoutpublic=0,tcpendin=0,tcpendout=0,tcpreset=0,conversations=0 1618398282000000000
+```
+
+  
+### Remote applications
+
+URL: `{nbaforzos_url}/api/stats/rapp`
+
+Method: `GET`
+
+This API allows you to get statistics and informations about remote applications in InfluxDB format.
+
+* Application informations: `host`, `protocol`, `port`, `ip`, ...
+* Application volume statistics: `packets`, `bytes`, `bps`, `pps`, ...
+* Application TCP activity: `tcpstart`, `tcprejected`, `tcpwindow`, `tcpdupack`, ...
+* Application TCP response times: `tcphostrt`, `tcpnetwrt`
+
+Sample response:
+
+```
+remoteapp,host="adcd",rem_prot="tcp",rem_port=21,rem_ip="10.1.1.33",rem_stack_name="tcpip",rem_agr_name="ftp\ control" rem_pkt_in=135,rem_pkt_out=123,rem_byt_in=10583,rem_byt_out=7846,rem_pps_in=5,rem_pps_out=5,rem_bps_in=3545,rem_bps_out=2626,rem_pkt_64_in=31,rem_pkt_128_in=104,rem_pkt_256_in=0,rem_pkt_512_in=0,rem_pkt_1024_in=0,rem_pkt_1025_in=0,rem_pkt_64_out=76,rem_pkt_128_out=47,rem_pkt_256_out=0,rem_pkt_512_out=0,rem_pkt_1024_out=0,rem_pkt_1025_out=0,rem_pkt_frag_in=0,rem_pkt_frag_out=0,rem_tcp_cn_sta=9,rem_tcp_cn_sto=10,rem_tcp_cn_rej=0,rem_tcp_cn_act=0,rem_max_hrt=280,rem_avg_hrt=11,rem_max_nrt=56,rem_avg_nrt=4,rem_tcp_dup_ack=0,rem_tcp_retrmt=0,rem_tcp_window=0,rem_hrt_inf_1=66,rem_hrt_inf_2=0,rem_hrt_inf_5=0,rem_hrt_inf_10=0,rem_hrt_sup_10=0,rem_nrt_inf_1=66,rem_nrt_inf_2=0,rem_nrt_inf_5=0,rem_nrt_inf_10=0,rem_nrt_sup_10=0,rem_frag_in_per=0.00,rem_frag_out_per=0.00,rem_dup_ack_per=0.00,rem_retrmt_per=0.00,rem_window_per=0.00 1618398393000000000
+remoteapp,host="adcd",rem_prot="tcp",rem_port=25,rem_ip="10.1.1.33",rem_stack_name="tcpip",rem_agr_name="smtp" rem_pkt_in=5,rem_pkt_out=5,rem_byt_in=200,rem_byt_out=300,rem_pps_in=1,rem_pps_out=1,rem_bps_in=31,rem_bps_out=47,rem_pkt_64_in=5,rem_pkt_128_in=0,rem_pkt_256_in=0,rem_pkt_512_in=0,rem_pkt_1024_in=0,rem_pkt_1025_in=0,rem_pkt_64_out=5,rem_pkt_128_out=0,rem_pkt_256_out=0,rem_pkt_512_out=0,rem_pkt_1024_out=0,rem_pkt_1025_out=0,rem_pkt_frag_in=0,rem_pkt_frag_out=0,rem_tcp_cn_sta=0,rem_tcp_cn_sto=0,rem_tcp_cn_rej=5,rem_tcp_cn_act=0,rem_max_hrt=0,rem_avg_hrt=0,rem_max_nrt=0,rem_avg_nrt=0,rem_tcp_dup_ack=0,rem_tcp_retrmt=0,rem_tcp_window=0,rem_hrt_inf_1=0,rem_hrt_inf_2=0,rem_hrt_inf_5=0,rem_hrt_inf_10=0,rem_hrt_sup_10=0,rem_nrt_inf_1=0,rem_nrt_inf_2=0,rem_nrt_inf_5=0,rem_nrt_inf_10=0,rem_nrt_sup_10=0,rem_frag_in_per=0.00,rem_frag_out_per=0.00,rem_dup_ack_per=0.00,rem_retrmt_per=0.00,rem_window_per=0.00 1618398393000000000
+```
+
+  
+### Interface metrics
+
+URL: `{nbaforzos_url}/api/stats/intf`
+
+Method: `GET`
+  
+This API allows you to get statistics and informations about network interfaces in InfluxDB format.
+
+* Interface informations: `host`, `name`, `stack`, `ip`, ...
+* Interface volume statistics: `packets`, `bytes`, `bps`, `pps`, ...
+* Interface TCP activity: `tcpstart`, `tcprejected`, `tcpwindow`, `tcpdupack`, ...
+* Interface TCP response times: `tcphostrt`, `tcpnetwrt`
+
+Sample response:
+
+```
+ace,host="adcd",int_tcpip="tcpip",int_link_name="loopback",int_ip="127.0.0.1" int_pkt_in=6630,int_pkt_out=0,int_byt_in=421005,int_byt_out=0,int_pps_in=1,int_pps_out=0,int_bps_in=301,int_bps_out=0,int_pkt_64_in=3315,int_pkt_128_in=3315,int_pkt_256_in=0,int_pkt_512_in=0,int_pkt_1024_in=0,int_pkt_1025_in=0,int_pkt_64_out=0,int_pkt_128_out=0,int_pkt_256_out=0,int_pkt_512_out=0,int_pkt_1024_out=0,int_pkt_1025_out=0,int_pkt_frag_in=0,int_pkt_frag_out=0,int_tcp_cn_sta=0,int_tcp_cn_sto=0,int_tcp_cn_rej=0,int_tcp_cn_act=0,int_icmp_in=185640,int_icmp_out=0,int_igmp_in=0,int_igmp_out=0,int_tcp_in=0,int_tcp_out=0,int_igrp_in=0,int_igrp_out=0,int_udp_in=235365,int_udp_out=0,int_gre_in=0,int_gre_out=0,int_esp_in=0,int_esp_out=0,int_ah_in=0,int_ah_out=0,int_eigrp_in=0,int_eigrp_out=0,int_ospf_in=0,int_ospf_out=0,int_l2tp_in=0,int_l2tp_out=0,int_othr_in=0,int_othr_out=0,int_tcp_dup_ack=0,int_tcp_retrmt=0,int_tcp_window=0,int_load_in=0.00,int_load_out=0.00,int_frag_in_per=0.00,int_frag_out_per=0.00,int_dup_ack_per=0.00,int_retrmt_per=0.00,int_window_per=0.00,int_req_per_min=0,int_sta_in_priv=0,int_sta_in_pub=0,int_sta_out_priv=0,int_sta_out_pub=0,int_sto_in=0,int_sto_out=0,int_tcp_cn_res=0 1618398657000000000
+interface,host="adcd",int_tcpip="tcpip",int_link_name="lnkvipa",int_ip="192.168.9.1" int_pkt_in=72179,int_pkt_out=178366,int_byt_in=4501888,int_byt_out=197101581,int_pps_in=426,int_pps_out=2147,int_bps_in=138011,int_bps_out=24109041,int_pkt_64_in=58223,int_pkt_128_in=4760,int_pkt_256_in=9010,int_pkt_512_in=86,int_pkt_1024_in=100,int_pkt_1025_in=0,int_pkt_64_out=19064,int_pkt_128_out=166,int_pkt_256_out=20212,int_pkt_512_out=11142,int_pkt_1024_out=1926,int_pkt_1025_out=125856,int_pkt_frag_in=0,int_pkt_frag_out=0,int_tcp_cn_sta=5626,int_tcp_cn_sto=5749,int_tcp_cn_rej=56,int_tcp_cn_act=5,int_icmp_in=1129907,int_icmp_out=319,int_igmp_in=0,int_igmp_out=0,int_tcp_in=3136616,int_tcp_out=193877940,int_igrp_in=0,int_igrp_out=0,int_udp_in=235365,int_udp_out=3223322,int_gre_in=0,int_gre_out=0,int_esp_in=0,int_esp_out=0,int_ah_in=0,int_ah_out=0,int_eigrp_in=0,int_eigrp_out=0,int_ospf_in=0,int_ospf_out=0,int_l2tp_in=0,int_l2tp_out=0,int_othr_in=0,int_othr_out=0,int_tcp_dup_ack=70,int_tcp_retrmt=1004,int_tcp_window=404,int_load_in=0.00,int_load_out=0.00,int_frag_in_per=0.00,int_frag_out_per=0.00,int_dup_ack_per=0.03,int_retrmt_per=0.40,int_window_per=0.16,int_req_per_min=0,int_sta_in_priv=5626,int_sta_in_pub=0,int_sta_out_priv=0,int_sta_out_pub=0,int_sto_in=40,int_sto_out=5584,int_tcp_cn_res=2 1618398657000000000
+interface,host="adcd",int_tcpip="tcpip",int_link_name="samehlnk",int_ip="" int_pkt_in=0,int_pkt_out=0,int_byt_in=0,int_byt_out=0,int_pps_in=0,int_pps_out=0,int_bps_in=0,int_bps_out=0,int_pkt_64_in=0,int_pkt_128_in=0,int_pkt_256_in=0,int_pkt_512_in=0,int_pkt_1024_in=0,int_pkt_1025_in=0,int_pkt_64_out=0,int_pkt_128_out=0,int_pkt_256_out=0,int_pkt_512_out=0,int_pkt_1024_out=0,int_pkt_1025_out=0,int_pkt_frag_in=0,int_pkt_frag_out=0,int_tcp_cn_sta=0,int_tcp_cn_sto=0,int_tcp_cn_rej=0,int_tcp_cn_act=0,int_icmp_in=0,int_icmp_out=0,int_igmp_in=0,int_igmp_out=0,int_tcp_in=0,int_tcp_out=0,int_igrp_in=0,int_igrp_out=0,int_udp_in=0,int_udp_out=0,int_gre_in=0,int_gre_out=0,int_esp_in=0,int_esp_out=0,int_ah_in=0,int_ah_out=0,int_eigrp_in=0,int_eigrp_out=0,int_ospf_in=0,int_ospf_out=0,int_l2tp_in=0,int_l2tp_out=0,int_othr_in=0,int_othr_out=0,int_tcp_dup_ack=0,int_tcp_retrmt=0,int_tcp_window=0,int_load_in=0.00,int_load_out=0.00,int_frag_in_per=0.00,int_frag_out_per=0.00,int_dup_ack_per=0.00,int_retrmt_per=0.00,int_window_per=0.00,int_req_per_min=0,int_sta_in_priv=0,int_sta_in_pub=0,int_sta_out_priv=0,int_sta_out_pub=0,int_sto_in=0,int_sto_out=0,int_tcp_cn_res=0 1618398657000000000
+```
+  
+### Network metrics
+
+URL: `{nbaforzos_url}/api/stats/netw`
+
+Method: `GET`
+
+This API allows you to get statistics and informations about networks in InfluxDB format.
+
+* Network informations: `host`, `subnetip`
+* Network volume statistics: `packets`, `bytes`, `bps`, `pps`, ...
+* Network TCP activity: `tcpstart`, `tcprejected`, `tcpwindow`, `tcpdupack`, ...
+* Network TCP response times: `tcphostrt`, `tcpnetwrt`
+
+Sample response:
+
+```
+network,host="adcd",net_ipaddr="10.1.1" net_pkt_in=71593,net_pkt_out=195138,net_byt_in=3577211,net_byt_out=242301404,net_pps_in=439,net_pps_out=2147,net_bps_in=141190,net_bps_out=24108786,net_pkt_64_in=65930,net_pkt_128_in=1544,net_pkt_256_in=3934,net_pkt_512_in=85,net_pkt_1024_in=100,net_pkt_1025_in=0,net_pkt_64_out=18955,net_pkt_128_out=213,net_pkt_256_out=5143,net_pkt_512_out=11117,net_pkt_1024_out=1935,net_pkt_1025_out=157775,net_pkt_frag_in=0,net_pkt_frag_out=0,net_tcp_cn_sta=5587,net_tcp_cn_sto=5711,net_tcp_cn_rej=61,net_tcp_cn_act=5,net_icmp_in=319,net_icmp_out=319,net_igmp_in=0,net_igmp_out=0,net_tcp_in=3576892,net_tcp_out=241499005,net_igrp_in=0,net_igrp_out=0,net_udp_in=0,net_udp_out=802080,net_gre_in=0,net_gre_out=0,net_esp_in=0,net_esp_out=0,net_ah_in=0,net_ah_out=0,net_eigrp_in=0,net_eigrp_out=0,net_ospf_in=0,net_ospf_out=0,net_l2tp_in=0,net_l2tp_out=0,net_othr_in=0,net_othr_out=0,net_max_hrt=5125,net_avg_hrt=61,net_max_nrt=69,net_avg_nrt=8,net_tcp_dup_ack=1414,net_tcp_retrmt=2957,net_tcp_window=404,net_hrt_inf_1=5840,net_hrt_inf_2=7,net_hrt_inf_5=5,net_hrt_inf_10=1,net_hrt_sup_10=0,net_nrt_inf_1=269,net_nrt_inf_2=0,net_nrt_inf_5=0,net_nrt_inf_10=0,net_nrt_sup_10=0,net_frag_in_per=0.00,net_frag_out_per=0.00,net_dup_ack_per=0.53,net_retrmt_per=1.11,net_window_per=0.15 1618398546000000000
+network,host="adcd",net_ipaddr="192.168.5" net_pkt_in=0,net_pkt_out=5013,net_byt_in=0,net_byt_out=807093,net_pps_in=0,net_pps_out=1,net_bps_in=0,net_bps_out=127,net_pkt_64_in=0,net_pkt_128_in=0,net_pkt_256_in=0,net_pkt_512_in=0,net_pkt_1024_in=0,net_pkt_1025_in=0,net_pkt_64_out=0,net_pkt_128_out=0,net_pkt_256_out=5013,net_pkt_512_out=0,net_pkt_1024_out=0,net_pkt_1025_out=0,net_pkt_frag_in=0,net_pkt_frag_out=0,net_tcp_cn_sta=0,net_tcp_cn_sto=0,net_tcp_cn_rej=0,net_tcp_cn_act=0,net_icmp_in=0,net_icmp_out=0,net_igmp_in=0,net_igmp_out=0,net_tcp_in=0,net_tcp_out=0,net_igrp_in=0,net_igrp_out=0,net_udp_in=0,net_udp_out=807093,net_gre_in=0,net_gre_out=0,net_esp_in=0,net_esp_out=0,net_ah_in=0,net_ah_out=0,net_eigrp_in=0,net_eigrp_out=0,net_ospf_in=0,net_ospf_out=0,net_l2tp_in=0,net_l2tp_out=0,net_othr_in=0,net_othr_out=0,net_max_hrt=0,net_avg_hrt=0,net_max_nrt=0,net_avg_nrt=0,net_tcp_dup_ack=0,net_tcp_retrmt=0,net_tcp_window=0,net_hrt_inf_1=0,net_hrt_inf_2=0,net_hrt_inf_5=0,net_hrt_inf_10=0,net_hrt_sup_10=0,net_nrt_inf_1=0,net_nrt_inf_2=0,net_nrt_inf_5=0,net_nrt_inf_10=0,net_nrt_sup_10=0,net_frag_in_per=0.00,net_frag_out_per=0.00,net_dup_ack_per=0.00,net_retrmt_per=0.00,net_window_per=0.00 1618398546000000000
+network,host="adcd",net_ipaddr="192.168.7" net_pkt_in=0,net_pkt_out=5014,net_byt_in=0,net_byt_out=807254,net_pps_in=0,net_pps_out=1,net_bps_in=0,net_bps_out=255,net_pkt_64_in=0,net_pkt_128_in=0,net_pkt_256_in=0,net_pkt_512_in=0,net_pkt_1024_in=0,net_pkt_1025_in=0,net_pkt_64_out=0,net_pkt_128_out=0,net_pkt_256_out=5014,net_pkt_512_out=0,net_pkt_1024_out=0,net_pkt_1025_out=0,net_pkt_frag_in=0,net_pkt_frag_out=0,net_tcp_cn_sta=0,net_tcp_cn_sto=0,net_tcp_cn_rej=0,net_tcp_cn_act=0,net_icmp_in=0,net_icmp_out=0,net_igmp_in=0,net_igmp_out=0,net_tcp_in=0,net_tcp_out=0,net_igrp_in=0,net_igrp_out=0,net_udp_in=0,net_udp_out=807254,net_gre_in=0,net_gre_out=0,net_esp_in=0,net_esp_out=0,net_ah_in=0,net_ah_out=0,net_eigrp_in=0,net_eigrp_out=0,net_ospf_in=0,net_ospf_out=0,net_l2tp_in=0,net_l2tp_out=0,net_othr_in=0,net_othr_out=0,net_max_hrt=0,net_avg_hrt=0,net_max_nrt=0,net_avg_nrt=0,net_tcp_dup_ack=0,net_tcp_retrmt=0,net_tcp_window=0,net_hrt_inf_1=0,net_hrt_inf_2=0,net_hrt_inf_5=0,net_hrt_inf_10=0,net_hrt_sup_10=0,net_nrt_inf_1=0,net_nrt_inf_2=0,net_nrt_inf_5=0,net_nrt_inf_10=0,net_nrt_sup_10=0,net_frag_in_per=0.00,net_frag_out_per=0.00,net_dup_ack_per=0.00,net_retrmt_per=0.00,net_window_per=0.00 1618398546000000000
+```
+
+  
+### Network conversations metrics
+
+URL: `{nbaforzos_url}/api/netconv`
+
+Method: `GET`
+
+This API allows you to get active network conversations with statistics. The output is in `CSV` format (`,` separator).
+
+Sample response:
+
+```
+type,time,host,clientip,clientport,serverip,serverport,proto,program,bytesin,bytesout,packetsin,packetsout,sizein,sizeout,windowsizein,windowsizeout
+netconv,1618398675000000000,adcd,10.1.1.12,6244,192.168.9.1,83,tcp,nba4zos,401,6606,7,8,57,826,255,255
+netconv,1618398675000000000,adcd,10.1.1.12,6231,192.168.9.1,83,tcp,nba4zos,361,2218,6,6,60,370,255,255
+netconv,1618398675000000000,adcd,10.1.1.12,6257,192.168.9.1,83,tcp,nba4zos,401,6593,7,8,57,824,255,255
+netconv,1618398675000000000,adcd,10.1.1.12,6253,192.168.9.1,83,tcp,nba4zos,358,4645,6,7,60,664,255,255
+netconv,1618398675000000000,adcd,10.1.1.33,17456,192.168.9.1,23,tcp,telnet,510,15536,11,19,46,818,255,255
+netconv,1618398675000000000,adcd,10.1.1.170,28916,192.168.9.1,83,tcp,nba4zos,121,80,3,2,40,40,255,255
+netconv,1618398675000000000,adcd,10.1.1.12,6240,192.168.9.1,83,tcp,nba4zos,401,6606,7,8,57,826,255,255
+netconv,1618398675000000000,adcd,10.1.1.12,6236,192.168.9.1,83,tcp,nba4zos,401,8792,7,9,57,977,255,255
+netconv,1618398675000000000,adcd,10.1.1.12,6249,192.168.9.1,83,tcp,nba4zos,401,6606,7,8,57,826,255,255
+netconv,1618398675000000000,adcd,10.1.1.12,6232,192.168.9.1,83,tcp,nba4zos,361,6593,6,8,60,824,255,255
+...
+```
+
+## Notes:
+
+* Integration of NBA for z/OS with ServicePilot is native.
+* These integrations and APIs are only available with the commercial version of NBA for z/OS.
+
+
