@@ -3,7 +3,7 @@
 Network tracing for z/OS
 Network performance & activity monitoring for z/OS
 
-Version 8.1 Level 21097: from z/OS v1r5 to z/OS v2r4
+Version 8.1 Level 21105: from z/OS v1r5 to z/OS v2r4
 
 ## Free version
 
