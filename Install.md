@@ -10,7 +10,7 @@
 
 ### 1. Download and unzip files
 
-   1. Download TDSLink-NBA_for_zOS.zip from this site
+   1. Download [TDSLink-NBA_for_zOS.zip](TDSLink-NBA_for_zOS.zip) from this site
    
    2. Unzip TDSLink-NBA_for_zOS.zip
 
