@@ -10,7 +10,7 @@ You are welcome to contribute to NBA for z/OS with integration samples. Feel fre
 NBA for z/OS integration is possible with the following tools:
 
 - [ServicePilot](servicepilot/README.md): Sends events & metrics to ServicePilot
-- [InfluxDB](influxdb/README.md): Sends metrics to InfluxDB and compatible software packages like Grafana
+- [InfluxDB / Grafana](influxdb/README.md): Sends metrics to InfluxDB and compatible software packages like Grafana
 
 ## Get z/OS Logs
 
