@@ -1,5 +1,5 @@
 
-# TDSLink - NBA for z/OS integration with InfluxDB
+# TDSLink - NBA for z/OS integration with InfluxDB and Grafana
 
 This page describes how to integrate **NBA for z/OS** metrics into InfluxDB using InfluxData's Telegraf agent.
 
