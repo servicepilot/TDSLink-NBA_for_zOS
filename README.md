@@ -32,15 +32,24 @@ More information: [ServicePilot web site](https://www.servicepilot.com/en/applic
 
 A free month's trial is available on demand. Do not hesitate to request one at: [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot%20NBA%20for%20z/OS%20Full%20Edition)
 
+### APIs
+
+ - [APIs](Integrations/README.md)
+
+### Integrations
+
+NBA for z/OS integration is possible with the following tools:
+
+- [ServicePilot](Integrations/servicepilot/README.md): Sends events & metrics to ServicePilot
+- [InfluxDB / Grafana](Integrations/influxdb/README.md): Sends metrics to InfluxDB and compatible software packages like Grafana
+
+You are welcome to contribute to NBA for z/OS with integration samples. Feel free to contact us at [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot%20NBA%20for%20z/OS%20Full%20Edition%20Integration%20samples) for discussing proposals or to raise a question.
+
 ## Installation & Security consideration
 
  - [Install](Install.md)
  - [Security](https.md)
 
-
-## Integration and APIs
-
- - [Integration and APIs](Integrations/README.md)
 
 ## Support
 
