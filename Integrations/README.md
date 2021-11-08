@@ -1,16 +1,4 @@
-# TDSLink - NBA for z/OS Integrations and APIs
-
-## How to contribute
-
-You are welcome to contribute to NBA for z/OS with integration samples. Feel free to contact us at [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot%20NBA%20for%20z/OS%20Full%20Edition%20Integration%20samples) for discussing proposals or to raise a question.
-
-
-## Integrations
-
-NBA for z/OS integration is possible with the following tools:
-
-- [ServicePilot](servicepilot/README.md): Sends events & metrics to ServicePilot
-- [InfluxDB / Grafana](influxdb/README.md): Sends metrics to InfluxDB and compatible software packages like Grafana
+# TDSLink - NBA for z/OS APIs
 
 ## Get z/OS Logs
 
