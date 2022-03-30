@@ -42,4 +42,4 @@ Ring:
 
 ## Copyright
 
-© Copyright ServicePilot Inc 2020
+© Copyright ServicePilot Inc 2022

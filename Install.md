@@ -1,8 +1,9 @@
+
 # Installing ServicePilot TDSLink - NBA for z/OS
 
 ## Requirements
 
-- z/OS v1r5 to v2r4
+- z/OS v1r5 to v2r5
 - A product key - *Only for the commercial version of this software*
 - The software from this repository
 
@@ -16,7 +17,7 @@
 
 ### 2. Upload and receive NBA for z/OS load file
 
-   1. Upload `NBA_for_zOS_8.1_yyqqq.xmi` from the unzipped folder (previous step) with **FTP** or **IND$FILE** to z/OS using a binary file transfer method (no CRLF or ASCII translation) into a dataset (e.g.: `NBA4ZOS.TEMP.XMI`) with the following format:
+   1. Upload `NBA_for_zOS_9.0_yyqqq.xmi` from the unzipped folder (previous step) with **FTP** or **IND$FILE** to z/OS using a binary file transfer method (no CRLF or ASCII translation) into a dataset (e.g.: `NBA4ZOS.TEMP.XMI`) with the following format:
 
           LRECL=80,RECFM=FB,DSORG=PS
 
@@ -26,7 +27,7 @@
 
       When prompted by the `RECEIVE` command, enter:
 
-          DA(‘NBA4ZOS.V81.LOAD’) UNIT(unit) VOLUME(volume)
+          DA(‘NBA4ZOS.V90.LOAD’) UNIT(unit) VOLUME(volume)
 
 ### 3. Perform APF authorization for NBA for z/OS LOADLIB
 
@@ -42,7 +43,7 @@ Use either a *Static* or *Dynamic* APF authorization.
 
    1. The command below allows a dynamic definition in console mode:
 
-          SETPROG APF ADD DSN=NBA4ZOS.V81.LOAD,VOL=......
+          SETPROG APF ADD DSN=NBA4ZOS.V90.LOAD,VOL=......
 
 ### 4. Create the started task – STC
 
@@ -53,7 +54,7 @@ Use either a *Static* or *Dynamic* APF authorization.
           //*
           //NBA4ZOS EXEC PGM=PTDS,TIME=1440,REGION=0M
           //*
-          //STEPLIB  DD DISP=SHR,DSN=NBA4ZOS.V81.LOAD
+          //STEPLIB  DD DISP=SHR,DSN=NBA4ZOS.V90.LOAD
           //SYSIN    DD DUMMY
           //*SYSIN   DD DISP=SHR,DSN=NBA4ZOS.PARMLIB(SYSIN)
           //SYSABEND DD SYSOUT=*
@@ -174,4 +175,4 @@ For any question or contribution, you can contact us at: [support@servicepilot.c
 
 ## Copyright
 
-© Copyright ServicePilot Inc 2021
+© Copyright ServicePilot Inc 2022
