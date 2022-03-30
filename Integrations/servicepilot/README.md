@@ -4,7 +4,7 @@
 NBA for z/OS integrates natively with [ServicePilot](https://www.servicepilot.com) requiring a minimum amount of configuration. Refer to the ServicePilot package documentation integrated in the ServicePilot web interface.
 
 1. Install your NBA for z/OS Agent with a Full Edition license key
-2. Install ServicePilot ISM Agent in your datacentre (on a Windows server)
+2. Install ServicePilot ISM Agent in your datacenter (on a Windows server)
 3. Use the ServicePilot SaaS or On premise web interface to provision a **nettrace-zos** package which will automatically add a **server-zos-sp-agent** resource.
 
 You will be able to quickly access all the statistics and logs from your NBA for z/OS instances.
