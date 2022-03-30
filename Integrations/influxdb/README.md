@@ -84,3 +84,7 @@ In order to test NBA for z/OS measurements collected, you can run `telegraf --co
 ## Grafana Dashboard snapshots
 
 ![TDSLink - NBA for z/OS Grafana dashboard screenshot](grafana-screenshot1.png)
+
+## Copyright
+
+© Copyright ServicePilot Inc 2022
