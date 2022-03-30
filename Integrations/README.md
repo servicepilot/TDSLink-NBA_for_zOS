@@ -32,9 +32,9 @@ URL: `{nbaforzos_url}/api/stats/lapp`
 
 Method: `GET`
 
-This API allows you to get statistics and informations about local applications in InfluxDB format.
+This API allows you to get statistics and information about local applications in InfluxDB format.
 
-* Application informations: `host`, `protocol`, `port`, ...
+* Application information: `host`, `protocol`, `port`, ...
 * Application volume statistics: `packets`, `bytes`, `bps`, `pps`, ...
 * Application TCP activity: `tcpstart`, `tcprejected`, `tcpwindow`, `tcpdupack`, ...
 * Application TCP response times: `tcphostrt`, `tcpnetwrt`
@@ -54,9 +54,9 @@ URL: `{nbaforzos_url}/api/stats/rapp`
 
 Method: `GET`
 
-This API allows you to get statistics and informations about remote applications in InfluxDB format.
+This API allows you to get statistics and information about remote applications in InfluxDB format.
 
-* Application informations: `host`, `protocol`, `port`, `ip`, ...
+* Application information: `host`, `protocol`, `port`, `ip`, ...
 * Application volume statistics: `packets`, `bytes`, `bps`, `pps`, ...
 * Application TCP activity: `tcpstart`, `tcprejected`, `tcpwindow`, `tcpdupack`, ...
 * Application TCP response times: `tcphostrt`, `tcpnetwrt`
@@ -75,9 +75,9 @@ URL: `{nbaforzos_url}/api/stats/intf`
 
 Method: `GET`
   
-This API allows you to get statistics and informations about network interfaces in InfluxDB format.
+This API allows you to get statistics and information about network interfaces in InfluxDB format.
 
-* Interface informations: `host`, `name`, `stack`, `ip`, ...
+* Interface information: `host`, `name`, `stack`, `ip`, ...
 * Interface volume statistics: `packets`, `bytes`, `bps`, `pps`, ...
 * Interface TCP activity: `tcpstart`, `tcprejected`, `tcpwindow`, `tcpdupack`, ...
 * Interface TCP response times: `tcphostrt`, `tcpnetwrt`
@@ -96,9 +96,9 @@ URL: `{nbaforzos_url}/api/stats/netw`
 
 Method: `GET`
 
-This API allows you to get statistics and informations about networks in InfluxDB format.
+This API allows you to get statistics and information about networks in InfluxDB format.
 
-* Network informations: `host`, `subnetip`
+* Network information: `host`, `subnetip`
 * Network volume statistics: `packets`, `bytes`, `bps`, `pps`, ...
 * Network TCP activity: `tcpstart`, `tcprejected`, `tcpwindow`, `tcpdupack`, ...
 * Network TCP response times: `tcphostrt`, `tcpnetwrt`
