@@ -1,4 +1,8 @@
+
 # TDSLink - NBA for z/OS APIs
+
+* Integration of NBA for z/OS with ServicePilot is supported natively.
+* These integrations and APIs are only available with the commercial version of NBA for z/OS.
 
 ## Get z/OS Logs
 
@@ -37,7 +41,7 @@ This API allows you to get statistics and informations about local applications 
 
 Sample response:
 
-```
+```csv
 localapp,host="adcd",proto="tcp",serverport=22,program="sshd4" packetsin=0,packetsout=0,bytesin=0,bytesout=0,maxppsin=0,maxppsout=0,maxbpsin=0,maxbpsout=0,tcpstart=0,tcpend=0,tcprejected=0,tcphostrt=0,tcpnetwrt=0,tcpdupack=0,tcpretransmit=0,tcpwindow=0,tcpstartinprivate=0,tcpstartinpublic=0,tcpstartoutprivate=0,tcpstartoutpublic=0,tcpendin=0,tcpendout=0,tcpreset=0,conversations=0 1618398282000000000
 localapp,host="adcd",proto="tcp",serverport=23,program="telnet" packetsin=629,packetsout=676,bytesin=31014,bytesout=472169,maxppsin=9,maxppsout=9,maxbpsin=3606,maxbpsout=67554,tcpstart=5,tcpend=2,tcprejected=0,tcphostrt=106,tcpnetwrt=8,tcpdupack=1,tcpretransmit=3,tcpwindow=0,tcpstartinprivate=5,tcpstartinpublic=0,tcpstartoutprivate=0,tcpstartoutpublic=0,tcpendin=0,tcpendout=2,tcpreset=0,conversations=2,bytesintopip="10.1.1.170",bytesouttopip="10.1.1.170" 1618398282000000000
 localapp,host="adcd",proto="tcp",serverport=80,program="httpd1" packetsin=0,packetsout=0,bytesin=0,bytesout=0,maxppsin=0,maxppsout=0,maxbpsin=0,maxbpsout=0,tcpstart=0,tcpend=0,tcprejected=0,tcphostrt=0,tcpnetwrt=0,tcpdupack=0,tcpretransmit=0,tcpwindow=0,tcpstartinprivate=0,tcpstartinpublic=0,tcpstartoutprivate=0,tcpstartoutpublic=0,tcpendin=0,tcpendout=0,tcpreset=0,conversations=0 1618398282000000000
@@ -133,9 +137,6 @@ netconv,1618398675000000000,adcd,10.1.1.12,6232,192.168.9.1,83,tcp,nba4zos,361,6
 ...
 ```
 
-## Notes:
+## Copyright
 
-* Integration of NBA for z/OS with ServicePilot is native.
-* These integrations and APIs are only available with the commercial version of NBA for z/OS.
-
-
+© Copyright ServicePilot Inc 2022
