@@ -41,7 +41,7 @@ A free month's trial is available on demand. Do not hesitate to request one at: 
 
 NBA for z/OS integration is possible with the following tools:
 
-- [ServicePilot](Integrations/servicepilot/README.md): Sends events & metrics to ServicePilot SaaS or On premise
+- [ServicePilot](Integrations/servicepilot/README.md): Sends events & metrics to ServicePilot **SaaS** or **On premise**
   - ServicePilot allows you to visualize the data collected by NBA for z/OS and integrate it with other parts of your infrastructure. For example present the status of your LPARs along side network switch status: ![ServicePilot map view screenshot](Integrations/servicepilot/ServicePilot_map_screenshot.png)
   - ServicePilot presents network traces collected by NBA for z/OS graphically with the possibility of filtering and viewing the assoicated detail: ![ServicePilot NETTrace screenshot](Integrations/servicepilot/ServicePilot_NETTrrace_screenshot.png)
   - ServicePilot summarizes network flow data as numerical indicators and performs *Machine Learning* calculations to generate trends and intelligent alerts: ![ServicePilot Machine Learning indicators screenshot](Integrations/servicepilot/ServicePilot_indicator_screenshot.png)
