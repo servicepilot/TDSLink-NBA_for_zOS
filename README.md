@@ -1,8 +1,9 @@
 
 # ServicePilot TDSLink - NBA for z/OS
 
-Network tracing for z/OS
-Network performance & activity monitoring for z/OS
+Network **tracing** for z/OS
+
+Network **performance & activity** monitoring for z/OS
 
 Version 9.0 Level 22182: from z/OS v1r5 to z/OS v2r5
 
@@ -54,7 +55,7 @@ You are welcome to contribute to NBA for z/OS with integration samples. Feel fre
 
  - [Download](TDSLink-NBA_for_zOS.zip)
  - [Install](Install.md)
- - [Security](https.md)
+ - [TLS security](https.md)
 
 
 ## Support
