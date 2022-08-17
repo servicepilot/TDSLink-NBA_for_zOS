@@ -29,6 +29,7 @@ NBA for z/OS Full Edition can be used either by network or security engineers.
 - Operations and Diagnosis
 - Alerts: SNMP Trap, WTO, Logs, Syslog, e-mail
 - Collects system logs
+- API to export zOS logs and network statistics in real time
 
 More information: [ServicePilot web site](https://www.servicepilot.com/en/application-flow/mainframe/)
 
