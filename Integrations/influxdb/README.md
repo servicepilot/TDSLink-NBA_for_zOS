@@ -87,4 +87,4 @@ In order to test NBA for z/OS measurements collected, you can run `telegraf --co
 
 ## Copyright
 
-© Copyright ServicePilot Inc 2022
+© Copyright ServicePilot Inc 2023
