@@ -13,4 +13,4 @@ Do not hesitate to contact us at [support@servicepilot.com](mailto:support@servi
 
 ## Copyright
 
-© Copyright ServicePilot Inc 2022
+© Copyright ServicePilot Inc 2023
