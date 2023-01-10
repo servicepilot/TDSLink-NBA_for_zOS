@@ -5,7 +5,7 @@ Network **tracing** for z/OS
 
 Network **performance & activity** monitoring for z/OS
 
-Version 9.0 Level 22265: from z/OS v1r5 to z/OS v2r5
+Version 9.0 Level 23010: from z/OS v1r5 to z/OS v2r5
 
 ## Free version
 
@@ -69,4 +69,4 @@ Whether you are using the free version or the commercial version, all questions 
 
 ## Copyright
 
-© Copyright ServicePilot Inc 2022
+© Copyright ServicePilot Inc 2023
