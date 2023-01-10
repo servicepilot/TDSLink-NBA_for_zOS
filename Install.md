@@ -175,4 +175,4 @@ For any question or contribution, you can contact us at: [support@servicepilot.c
 
 ## Copyright
 
-© Copyright ServicePilot Inc 2022
+© Copyright ServicePilot Inc 2023
