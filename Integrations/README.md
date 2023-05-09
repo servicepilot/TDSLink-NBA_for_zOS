@@ -4,6 +4,35 @@
 * Integration of NBA for z/OS with ServicePilot is supported natively.
 * These integrations and APIs are only available with the commercial version of NBA for z/OS.
 
+
+
+  
+### Network conversations metrics
+
+URL: `{nbaforzos_url}/api/nettrace`
+
+Method: `GET`
+
+This API allows you to get active network conversations with statistics. The output is in `CSV` format (`,` separator).
+
+Sample response:
+
+```
+firsttime,lasttime,clientagent,serveragent,clientip,clientport,clientprocess,serverip,serverport,serverprocess,proto,isserverlocal,bytesin,bytesout,packetsin,packetsout,tcpdupack,tcpretransmit,tcpwindow,tcpstart,tcpstartinprivate,tcpstartinpublic,tcpstartoutprivate,tcpstartoutpublic,tcpend,tcpendin,tcpendout,tcprejected,tcpreset,tcphostrt,tcpnetwrt,tcphostnb,tcpnetwnb
+2023-05-09T14:36:18.697972Z,2023-05-09T14:36:18.697972Z,adcd,adcd,192.168.9.1,161,tcpip,192.168.9.1,1036,,udp,0,0,71,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2023-05-09T14:36:45.306299Z,2023-05-09T14:36:45.338496Z,,adcd,10.1.1.33,9234,,192.168.9.1,83,nba4zos,tcp,1,271,345,4,6,0,0,0,1,1,0,0,0,1,0,1,0,0,19,0,1,0
+2023-05-09T14:37:07.700510Z,2023-05-09T14:37:10.701708Z,adcd,adcd,192.168.9.1,161,tcpip,192.168.9.1,1037,,udp,0,71,71,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2023-05-09T14:36:23.702382Z,2023-05-09T14:37:10.341902Z,,adcd,192.168.8.1,12000,,192.168.9.1,12000,vtam,udp,1,160,480,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2023-05-09T14:36:45.339658Z,2023-05-09T14:36:45.363041Z,,adcd,10.1.1.33,9235,,192.168.9.1,83,nba4zos,tcp,1,315,2271,5,7,0,0,0,1,1,0,0,0,1,0,1,0,0,16,5,1,1
+2023-05-09T14:36:24.204239Z,2023-05-09T14:37:10.842366Z,,adcd,192.168.7.1,12000,,192.168.9.1,12000,vtam,udp,1,161,483,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2023-05-09T14:36:24.206120Z,2023-05-09T14:37:10.844711Z,,adcd,192.168.5.1,12000,,192.168.9.1,12000,vtam,udp,1,161,483,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2023-05-09T14:36:24.208031Z,2023-05-09T14:37:10.854016Z,,adcd,10.1.1.110,12000,,192.168.9.1,12000,vtam,udp,1,160,480,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2023-05-09T14:36:26.849896Z,2023-05-09T14:36:57.850276Z,,adcd,192.168.9.9,,tcpip,192.168.9.1,,,icmp,1,376,188,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2023-05-09T14:36:12.695893Z,2023-05-09T14:37:10.701909Z,adcd,adcd,192.168.9.1,,tcpip,192.168.9.1,,,icmp,1,168,56,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+...
+```
+
+
 ## Get z/OS Logs
 
 URL: `{nbaforzos_url}/api/logs`
@@ -109,32 +138,6 @@ Sample response:
 network,host="adcd",net_ipaddr="10.1.1" net_pkt_in=71593,net_pkt_out=195138,net_byt_in=3577211,net_byt_out=242301404,net_pps_in=439,net_pps_out=2147,net_bps_in=141190,net_bps_out=24108786,net_pkt_64_in=65930,net_pkt_128_in=1544,net_pkt_256_in=3934,net_pkt_512_in=85,net_pkt_1024_in=100,net_pkt_1025_in=0,net_pkt_64_out=18955,net_pkt_128_out=213,net_pkt_256_out=5143,net_pkt_512_out=11117,net_pkt_1024_out=1935,net_pkt_1025_out=157775,net_pkt_frag_in=0,net_pkt_frag_out=0,net_tcp_cn_sta=5587,net_tcp_cn_sto=5711,net_tcp_cn_rej=61,net_tcp_cn_act=5,net_icmp_in=319,net_icmp_out=319,net_igmp_in=0,net_igmp_out=0,net_tcp_in=3576892,net_tcp_out=241499005,net_igrp_in=0,net_igrp_out=0,net_udp_in=0,net_udp_out=802080,net_gre_in=0,net_gre_out=0,net_esp_in=0,net_esp_out=0,net_ah_in=0,net_ah_out=0,net_eigrp_in=0,net_eigrp_out=0,net_ospf_in=0,net_ospf_out=0,net_l2tp_in=0,net_l2tp_out=0,net_othr_in=0,net_othr_out=0,net_max_hrt=5125,net_avg_hrt=61,net_max_nrt=69,net_avg_nrt=8,net_tcp_dup_ack=1414,net_tcp_retrmt=2957,net_tcp_window=404,net_hrt_inf_1=5840,net_hrt_inf_2=7,net_hrt_inf_5=5,net_hrt_inf_10=1,net_hrt_sup_10=0,net_nrt_inf_1=269,net_nrt_inf_2=0,net_nrt_inf_5=0,net_nrt_inf_10=0,net_nrt_sup_10=0,net_frag_in_per=0.00,net_frag_out_per=0.00,net_dup_ack_per=0.53,net_retrmt_per=1.11,net_window_per=0.15 1618398546000000000
 network,host="adcd",net_ipaddr="192.168.5" net_pkt_in=0,net_pkt_out=5013,net_byt_in=0,net_byt_out=807093,net_pps_in=0,net_pps_out=1,net_bps_in=0,net_bps_out=127,net_pkt_64_in=0,net_pkt_128_in=0,net_pkt_256_in=0,net_pkt_512_in=0,net_pkt_1024_in=0,net_pkt_1025_in=0,net_pkt_64_out=0,net_pkt_128_out=0,net_pkt_256_out=5013,net_pkt_512_out=0,net_pkt_1024_out=0,net_pkt_1025_out=0,net_pkt_frag_in=0,net_pkt_frag_out=0,net_tcp_cn_sta=0,net_tcp_cn_sto=0,net_tcp_cn_rej=0,net_tcp_cn_act=0,net_icmp_in=0,net_icmp_out=0,net_igmp_in=0,net_igmp_out=0,net_tcp_in=0,net_tcp_out=0,net_igrp_in=0,net_igrp_out=0,net_udp_in=0,net_udp_out=807093,net_gre_in=0,net_gre_out=0,net_esp_in=0,net_esp_out=0,net_ah_in=0,net_ah_out=0,net_eigrp_in=0,net_eigrp_out=0,net_ospf_in=0,net_ospf_out=0,net_l2tp_in=0,net_l2tp_out=0,net_othr_in=0,net_othr_out=0,net_max_hrt=0,net_avg_hrt=0,net_max_nrt=0,net_avg_nrt=0,net_tcp_dup_ack=0,net_tcp_retrmt=0,net_tcp_window=0,net_hrt_inf_1=0,net_hrt_inf_2=0,net_hrt_inf_5=0,net_hrt_inf_10=0,net_hrt_sup_10=0,net_nrt_inf_1=0,net_nrt_inf_2=0,net_nrt_inf_5=0,net_nrt_inf_10=0,net_nrt_sup_10=0,net_frag_in_per=0.00,net_frag_out_per=0.00,net_dup_ack_per=0.00,net_retrmt_per=0.00,net_window_per=0.00 1618398546000000000
 network,host="adcd",net_ipaddr="192.168.7" net_pkt_in=0,net_pkt_out=5014,net_byt_in=0,net_byt_out=807254,net_pps_in=0,net_pps_out=1,net_bps_in=0,net_bps_out=255,net_pkt_64_in=0,net_pkt_128_in=0,net_pkt_256_in=0,net_pkt_512_in=0,net_pkt_1024_in=0,net_pkt_1025_in=0,net_pkt_64_out=0,net_pkt_128_out=0,net_pkt_256_out=5014,net_pkt_512_out=0,net_pkt_1024_out=0,net_pkt_1025_out=0,net_pkt_frag_in=0,net_pkt_frag_out=0,net_tcp_cn_sta=0,net_tcp_cn_sto=0,net_tcp_cn_rej=0,net_tcp_cn_act=0,net_icmp_in=0,net_icmp_out=0,net_igmp_in=0,net_igmp_out=0,net_tcp_in=0,net_tcp_out=0,net_igrp_in=0,net_igrp_out=0,net_udp_in=0,net_udp_out=807254,net_gre_in=0,net_gre_out=0,net_esp_in=0,net_esp_out=0,net_ah_in=0,net_ah_out=0,net_eigrp_in=0,net_eigrp_out=0,net_ospf_in=0,net_ospf_out=0,net_l2tp_in=0,net_l2tp_out=0,net_othr_in=0,net_othr_out=0,net_max_hrt=0,net_avg_hrt=0,net_max_nrt=0,net_avg_nrt=0,net_tcp_dup_ack=0,net_tcp_retrmt=0,net_tcp_window=0,net_hrt_inf_1=0,net_hrt_inf_2=0,net_hrt_inf_5=0,net_hrt_inf_10=0,net_hrt_sup_10=0,net_nrt_inf_1=0,net_nrt_inf_2=0,net_nrt_inf_5=0,net_nrt_inf_10=0,net_nrt_sup_10=0,net_frag_in_per=0.00,net_frag_out_per=0.00,net_dup_ack_per=0.00,net_retrmt_per=0.00,net_window_per=0.00 1618398546000000000
-```
-
-  
-### Network conversations metrics
-
-URL: `{nbaforzos_url}/api/netconv`
-
-Method: `GET`
-
-This API allows you to get active network conversations with statistics. The output is in `CSV` format (`,` separator).
-
-Sample response:
-
-```
-type,time,host,clientip,clientport,serverip,serverport,proto,program,bytesin,bytesout,packetsin,packetsout,sizein,sizeout,windowsizein,windowsizeout
-netconv,1618398675000000000,adcd,10.1.1.12,6244,192.168.9.1,83,tcp,nba4zos,401,6606,7,8,57,826,255,255
-netconv,1618398675000000000,adcd,10.1.1.12,6231,192.168.9.1,83,tcp,nba4zos,361,2218,6,6,60,370,255,255
-netconv,1618398675000000000,adcd,10.1.1.12,6257,192.168.9.1,83,tcp,nba4zos,401,6593,7,8,57,824,255,255
-netconv,1618398675000000000,adcd,10.1.1.12,6253,192.168.9.1,83,tcp,nba4zos,358,4645,6,7,60,664,255,255
-netconv,1618398675000000000,adcd,10.1.1.33,17456,192.168.9.1,23,tcp,telnet,510,15536,11,19,46,818,255,255
-netconv,1618398675000000000,adcd,10.1.1.170,28916,192.168.9.1,83,tcp,nba4zos,121,80,3,2,40,40,255,255
-netconv,1618398675000000000,adcd,10.1.1.12,6240,192.168.9.1,83,tcp,nba4zos,401,6606,7,8,57,826,255,255
-netconv,1618398675000000000,adcd,10.1.1.12,6236,192.168.9.1,83,tcp,nba4zos,401,8792,7,9,57,977,255,255
-netconv,1618398675000000000,adcd,10.1.1.12,6249,192.168.9.1,83,tcp,nba4zos,401,6606,7,8,57,826,255,255
-netconv,1618398675000000000,adcd,10.1.1.12,6232,192.168.9.1,83,tcp,nba4zos,361,6593,6,8,60,824,255,255
-...
 ```
 
 ## Copyright
