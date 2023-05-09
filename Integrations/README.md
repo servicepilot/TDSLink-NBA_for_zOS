@@ -7,7 +7,7 @@
 
 
   
-### Get Network conversations metrics
+## Get Network conversations metrics
 
 URL: `{nbaforzos_url}/api/nettrace`
 
