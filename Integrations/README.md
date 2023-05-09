@@ -7,13 +7,13 @@
 
 
   
-### Network conversations metrics
+### Get Network conversations metrics
 
 URL: `{nbaforzos_url}/api/nettrace`
 
 Method: `GET`
 
-This API allows you to get active network conversations with statistics. The output is in `CSV` format (`,` separator).
+This API allows you to get active network conversations with statistics. The output is in `CSV` format (`,` separator). This csv is updated every minute.
 
 Sample response:
 
@@ -53,9 +53,7 @@ N        ADCD    202110411.03.29.80STC00076-         TDSLINK     00    445      
 N        ADCD    202110411.03.29.80STC00076IEF404I NBA4ZOSF - ENDED - TIME=11.03.29
 ```
 
-## Get Network Statistics
-
-### Local applications
+## Get Local applications
 
 URL: `{nbaforzos_url}/api/stats/lapp`
 
@@ -77,7 +75,7 @@ localapp,host="adcd",proto="tcp",serverport=80,program="httpd1" packetsin=0,pack
 ```
 
   
-### Remote applications
+## Get Remote applications
 
 URL: `{nbaforzos_url}/api/stats/rapp`
 
@@ -98,7 +96,7 @@ remoteapp,host="adcd",rem_prot="tcp",rem_port=25,rem_ip="10.1.1.33",rem_stack_na
 ```
 
   
-### Interface metrics
+## Get Interface metrics
 
 URL: `{nbaforzos_url}/api/stats/intf`
 
@@ -114,12 +112,12 @@ This API allows you to get statistics and information about network interfaces i
 Sample response:
 
 ```
-ace,host="adcd",int_tcpip="tcpip",int_link_name="loopback",int_ip="127.0.0.1" int_pkt_in=6630,int_pkt_out=0,int_byt_in=421005,int_byt_out=0,int_pps_in=1,int_pps_out=0,int_bps_in=301,int_bps_out=0,int_pkt_64_in=3315,int_pkt_128_in=3315,int_pkt_256_in=0,int_pkt_512_in=0,int_pkt_1024_in=0,int_pkt_1025_in=0,int_pkt_64_out=0,int_pkt_128_out=0,int_pkt_256_out=0,int_pkt_512_out=0,int_pkt_1024_out=0,int_pkt_1025_out=0,int_pkt_frag_in=0,int_pkt_frag_out=0,int_tcp_cn_sta=0,int_tcp_cn_sto=0,int_tcp_cn_rej=0,int_tcp_cn_act=0,int_icmp_in=185640,int_icmp_out=0,int_igmp_in=0,int_igmp_out=0,int_tcp_in=0,int_tcp_out=0,int_igrp_in=0,int_igrp_out=0,int_udp_in=235365,int_udp_out=0,int_gre_in=0,int_gre_out=0,int_esp_in=0,int_esp_out=0,int_ah_in=0,int_ah_out=0,int_eigrp_in=0,int_eigrp_out=0,int_ospf_in=0,int_ospf_out=0,int_l2tp_in=0,int_l2tp_out=0,int_othr_in=0,int_othr_out=0,int_tcp_dup_ack=0,int_tcp_retrmt=0,int_tcp_window=0,int_load_in=0.00,int_load_out=0.00,int_frag_in_per=0.00,int_frag_out_per=0.00,int_dup_ack_per=0.00,int_retrmt_per=0.00,int_window_per=0.00,int_req_per_min=0,int_sta_in_priv=0,int_sta_in_pub=0,int_sta_out_priv=0,int_sta_out_pub=0,int_sto_in=0,int_sto_out=0,int_tcp_cn_res=0 1618398657000000000
+interface,host="adcd",int_tcpip="tcpip",int_link_name="loopback",int_ip="127.0.0.1" int_pkt_in=6630,int_pkt_out=0,int_byt_in=421005,int_byt_out=0,int_pps_in=1,int_pps_out=0,int_bps_in=301,int_bps_out=0,int_pkt_64_in=3315,int_pkt_128_in=3315,int_pkt_256_in=0,int_pkt_512_in=0,int_pkt_1024_in=0,int_pkt_1025_in=0,int_pkt_64_out=0,int_pkt_128_out=0,int_pkt_256_out=0,int_pkt_512_out=0,int_pkt_1024_out=0,int_pkt_1025_out=0,int_pkt_frag_in=0,int_pkt_frag_out=0,int_tcp_cn_sta=0,int_tcp_cn_sto=0,int_tcp_cn_rej=0,int_tcp_cn_act=0,int_icmp_in=185640,int_icmp_out=0,int_igmp_in=0,int_igmp_out=0,int_tcp_in=0,int_tcp_out=0,int_igrp_in=0,int_igrp_out=0,int_udp_in=235365,int_udp_out=0,int_gre_in=0,int_gre_out=0,int_esp_in=0,int_esp_out=0,int_ah_in=0,int_ah_out=0,int_eigrp_in=0,int_eigrp_out=0,int_ospf_in=0,int_ospf_out=0,int_l2tp_in=0,int_l2tp_out=0,int_othr_in=0,int_othr_out=0,int_tcp_dup_ack=0,int_tcp_retrmt=0,int_tcp_window=0,int_load_in=0.00,int_load_out=0.00,int_frag_in_per=0.00,int_frag_out_per=0.00,int_dup_ack_per=0.00,int_retrmt_per=0.00,int_window_per=0.00,int_req_per_min=0,int_sta_in_priv=0,int_sta_in_pub=0,int_sta_out_priv=0,int_sta_out_pub=0,int_sto_in=0,int_sto_out=0,int_tcp_cn_res=0 1618398657000000000
 interface,host="adcd",int_tcpip="tcpip",int_link_name="lnkvipa",int_ip="192.168.9.1" int_pkt_in=72179,int_pkt_out=178366,int_byt_in=4501888,int_byt_out=197101581,int_pps_in=426,int_pps_out=2147,int_bps_in=138011,int_bps_out=24109041,int_pkt_64_in=58223,int_pkt_128_in=4760,int_pkt_256_in=9010,int_pkt_512_in=86,int_pkt_1024_in=100,int_pkt_1025_in=0,int_pkt_64_out=19064,int_pkt_128_out=166,int_pkt_256_out=20212,int_pkt_512_out=11142,int_pkt_1024_out=1926,int_pkt_1025_out=125856,int_pkt_frag_in=0,int_pkt_frag_out=0,int_tcp_cn_sta=5626,int_tcp_cn_sto=5749,int_tcp_cn_rej=56,int_tcp_cn_act=5,int_icmp_in=1129907,int_icmp_out=319,int_igmp_in=0,int_igmp_out=0,int_tcp_in=3136616,int_tcp_out=193877940,int_igrp_in=0,int_igrp_out=0,int_udp_in=235365,int_udp_out=3223322,int_gre_in=0,int_gre_out=0,int_esp_in=0,int_esp_out=0,int_ah_in=0,int_ah_out=0,int_eigrp_in=0,int_eigrp_out=0,int_ospf_in=0,int_ospf_out=0,int_l2tp_in=0,int_l2tp_out=0,int_othr_in=0,int_othr_out=0,int_tcp_dup_ack=70,int_tcp_retrmt=1004,int_tcp_window=404,int_load_in=0.00,int_load_out=0.00,int_frag_in_per=0.00,int_frag_out_per=0.00,int_dup_ack_per=0.03,int_retrmt_per=0.40,int_window_per=0.16,int_req_per_min=0,int_sta_in_priv=5626,int_sta_in_pub=0,int_sta_out_priv=0,int_sta_out_pub=0,int_sto_in=40,int_sto_out=5584,int_tcp_cn_res=2 1618398657000000000
 interface,host="adcd",int_tcpip="tcpip",int_link_name="samehlnk",int_ip="" int_pkt_in=0,int_pkt_out=0,int_byt_in=0,int_byt_out=0,int_pps_in=0,int_pps_out=0,int_bps_in=0,int_bps_out=0,int_pkt_64_in=0,int_pkt_128_in=0,int_pkt_256_in=0,int_pkt_512_in=0,int_pkt_1024_in=0,int_pkt_1025_in=0,int_pkt_64_out=0,int_pkt_128_out=0,int_pkt_256_out=0,int_pkt_512_out=0,int_pkt_1024_out=0,int_pkt_1025_out=0,int_pkt_frag_in=0,int_pkt_frag_out=0,int_tcp_cn_sta=0,int_tcp_cn_sto=0,int_tcp_cn_rej=0,int_tcp_cn_act=0,int_icmp_in=0,int_icmp_out=0,int_igmp_in=0,int_igmp_out=0,int_tcp_in=0,int_tcp_out=0,int_igrp_in=0,int_igrp_out=0,int_udp_in=0,int_udp_out=0,int_gre_in=0,int_gre_out=0,int_esp_in=0,int_esp_out=0,int_ah_in=0,int_ah_out=0,int_eigrp_in=0,int_eigrp_out=0,int_ospf_in=0,int_ospf_out=0,int_l2tp_in=0,int_l2tp_out=0,int_othr_in=0,int_othr_out=0,int_tcp_dup_ack=0,int_tcp_retrmt=0,int_tcp_window=0,int_load_in=0.00,int_load_out=0.00,int_frag_in_per=0.00,int_frag_out_per=0.00,int_dup_ack_per=0.00,int_retrmt_per=0.00,int_window_per=0.00,int_req_per_min=0,int_sta_in_priv=0,int_sta_in_pub=0,int_sta_out_priv=0,int_sta_out_pub=0,int_sto_in=0,int_sto_out=0,int_tcp_cn_res=0 1618398657000000000
 ```
   
-### Network metrics
+## Get Network metrics
 
 URL: `{nbaforzos_url}/api/stats/netw`
 
