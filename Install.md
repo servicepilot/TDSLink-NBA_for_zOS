@@ -65,9 +65,6 @@ Use either a *Static* or *Dynamic* APF authorization.
 
    2. Customize the started task.
 
-   3. The NBA for z/OS commercial version STC can be started automatically.
-
-
 ### 5. Define RACF authorization
 
    1. Define NBA for z/OS to RACF and authorize NBA for z/OS userid to use Open Edition Services. If necessary, contact your security administrator.
