@@ -83,7 +83,7 @@ Use either a *Static* or *Dynamic* APF authorization.
             RDEF STARTED NBA4ZOS.* STDATA(USER(nbauser)) OWNER(racfadmuser)
             SETROPTS RACLIST(STARTED) REFRESH
             ALG nbagrp OMVS(GID(nnn))
-            ALU nbauser DFLTGRP(nbagrp) NOPASWORD OMVS(UID(nnn))
+            ALU nbauser DFLTGRP(nbagrp) NOPASSWORD OMVS(UID(nnn))
           /*
 
 > **Note:**
