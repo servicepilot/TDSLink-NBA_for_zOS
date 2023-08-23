@@ -5,7 +5,7 @@ Network **tracing** for z/OS
 
 Network **performance & activity** monitoring for z/OS
 
-Version 9.0 Level 23122: from z/OS v1r5 to z/OS v2r5
+Version 9.0 Level 23221: from z/OS v1r5 to z/OS v2r5
 
 ## Free version
 
