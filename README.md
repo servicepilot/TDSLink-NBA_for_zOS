@@ -3,9 +3,11 @@
 
 Network **tracing** for z/OS
 
-Network **performance & activity** monitoring for z/OS
+**APM & Network Security** for z/OS
 
 Version 9.0 Level 23221: from z/OS v1r5 to z/OS v2r5
+
+**Note:** ServicePilot NBA for z/OS is no longer available as a free version from z/OS v3r1, please contact us for more information [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot%20NBA%20for%20z/OS%20Full%20Edition).
 
 ## Free version
 
@@ -24,8 +26,9 @@ NBA for z/OS Free Edition captures all the IP traffic flowing through the IP dat
 NBA for z/OS Full Edition can be used either by network or security engineers.
 
 - All the free features: realtime traces, export as PCAP, ...
-- Activity Monitoring: Interface activity, local and remote application activity, Network activity, Response time
-- Performance: IP Traffic, IP Maximum load, Top ten traffic, Top ten host and network response times, TCP active connections, TCP start/stop/reject connections, TCP/IP buffer
+- APM Agent for ServicePilot Onpremise or in the cloud
+- Network security: Interface activity, local and remote application activity, Network activity, client behavior
+- Network performance: IP Traffic, IP Maximum load, Top ten traffic, Top ten host and network response times, TCP active connections, TCP start/stop/reject connections, TCP/IP buffer
 - Operations and Diagnosis
 - Alerts: SNMP Trap, WTO, Logs, Syslog, e-mail
 - Collects system logs
@@ -69,4 +72,4 @@ Whether you are using the free version or the commercial version, all questions 
 
 ## Copyright
 
-© Copyright ServicePilot Inc 2023
+© Copyright ServicePilot Inc 2024
