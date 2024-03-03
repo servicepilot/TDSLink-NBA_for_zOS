@@ -3,11 +3,11 @@
 
 Network **tracing** for z/OS
 
-**APM & Network Security** for z/OS
+Mainframe **Observability**
 
 Version 9.0 Level 23221: from z/OS v1r5 to z/OS v2r5
 
-**Note:** ServicePilot NBA for z/OS is no longer available as a free version from z/OS v3r1, please contact us for more information [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot%20NBA%20for%20z/OS%20Full%20Edition).
+**Note: ServicePilot NBA for z/OS is no longer available as a free version from z/OS v3r1, please contact us for more information [support@servicepilot.com](mailto:support@servicepilot.com?subject=ServicePilot%20NBA%20for%20z/OS%20Full%20Edition).**
 
 ## Free version
 
